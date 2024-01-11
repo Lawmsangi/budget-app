@@ -1,0 +1,29 @@
+<div class="login-container">
+  <div class="payments-header">
+    <%= link_to(categories_path, class: "back-button") do %>
+      <i class="bi bi-chevron-left"></i>
+    <% end %>
+    <div class="payment-header-container">
+      <h1 class="payment-header uppercase-text">Login</h1>
+    </div>
+    <%= button_tag "Log In", class: "login", id: "login-button" %>
+  </div>
+
+  <div class="login-content">
+    <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
+      <div class="field">
+        <%= f.email_field :email, autofocus: true, placeholder: "Email" %>
+        <%= f.password_field :password, placeholder: "Password" %>
+    <% end %>
+    </div>  
+    </div>
+    <div class="w-100 d-flex align-items-center justify-content-center p-3">
+      <%= link_to "Forgot password?", new_password_path(resource_name), class: "forget-password" %>
+    </div>
+
+<script>
+  document.getElementById("login-button").addEventListener("click", function() {
+    document.querySelector("form").submit();
+  });
+</script>
+

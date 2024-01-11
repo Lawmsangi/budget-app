@@ -1,0 +1,30 @@
+<div class="categories-container">
+  <div class="categories-header">
+    <h1 class="header uppercase-text">Categories</h1>
+    <%= link_to "Logout", destroy_user_session_path, method: :delete, class: "logout uppercase-text" %>
+  </div>
+  <div class="categories">
+    <ul class="categories-lists">
+    <% @categories.each do |category| %>
+      <%= link_to category_payments_path(category) do %>
+      <li class="categories-list">
+        <div class="category">   
+          <span class=""><%= content_tag(:i, '', class: "icon-large #{category.icon}") %></span> 
+          <div class="category-name">   
+            <span class="font-light"><%= category.name %></span>
+            <span class="date font-light"> 
+                <%= category.created_at.strftime('%d %b %Y') %>
+            </span>
+          </div>
+        </div>
+       
+        <span class="currency font-black"><%= number_to_currency(category.payments.sum(:amount)) %></span>
+      </li>
+      <% end %>
+    <% end %>
+    </ul>
+  </div>
+  <div class="new-category">
+      <%= link_to "New Category", new_category_path , class: "category-link uppercase-text"%>
+  </div>
+</div>
