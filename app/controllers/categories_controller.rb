@@ -1,15 +1,7 @@
 class CategoriesController < ApplicationController
+  include CategoriesHelper
   def index
-    @categories = Category.all
-  end
-
-  def show
-    @category = Category.find_by(id: params[:id])
-
-    return unless @category.nil?
-
-    redirect_to categories_path
-    flash[:alert] = 'Category not found.'
+    @categories = current_user.categories.includes(:payments)
   end
 
   def new
@@ -24,26 +16,6 @@ class CategoriesController < ApplicationController
       flash[:notice] = 'Category successfully created.'
     else
       render :new
-    end
-  end
-
-  def edit
-    @category = Category.find_by(id: params[:id])
-
-    return unless @category.nil?
-
-    redirect_to categories_path
-    flash[:alert] = 'Category not found.'
-  end
-
-  def update
-    @category = Category.find_by(id: params[:id])
-
-    if @category.update(category_params)
-      redirect_to category_path(@category)
-      flash[:notice] = 'Category successfully updated.'
-    else
-      render :edit
     end
   end
 
