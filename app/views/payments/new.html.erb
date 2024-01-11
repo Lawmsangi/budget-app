@@ -19,12 +19,12 @@
       <%= form.text_field :amount, class: "form-control" %>
     </div>
 
-    <div class="category-form form-group font-light">
+    <div class="form-group font-light">
       <%= form.label :category, class: "form-name" %>
       <%= form.collection_select :category, @categories, :name, :name, { prompt: "Select a category" }, { class: "category-select" } %>
     </div>
 
-    <div class="form-actions">
+    <div class="form-actions create-payment">
       <%= form.submit "Create Payment", class: "form-btns font-light" %>
     </div>
   <% end %>
