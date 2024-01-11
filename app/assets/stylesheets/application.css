@@ -276,18 +276,23 @@ a {
 }
 
 .new-category,
-.new-payment {
+.new-payment,
+.create-payment {
   display: flex;
   justify-content: center;
   align-items: center;
   background-color: #5fb523;
+  color: #f5f6f8;
   padding: 15px;
-  margin-top: auto;
   height: 13%;
+  position: fixed;
+  bottom: 0;
+  width: 100%;
 }
 
 .category-link,
-.payment-link {
+.payment-link,
+.form-btns {
   display: flex;
   align-items: center;
   justify-content: center;
@@ -295,6 +300,7 @@ a {
   color: #fff;
   font-size: 1.2rem;
   border: 2px solid #fff;
+  background-color: #5fb523;
   width: 100%;
   height: 100%;
 }
@@ -331,11 +337,6 @@ a {
   background-color: #fff;
 }
 
-.payments-new,
-.categories-new {
-  padding: 20px;
-}
-
 .form,
 .form-name {
   display: flex;
@@ -349,20 +350,11 @@ a {
 .form-group {
   display: flex;
   flex-direction: column;
-  gap: 10px;
+  gap: 5px;
+  padding: 10px 20px;
 }
 
 .form-control,
 .category-select {
   padding: 10px;
-}
-
-.form-btns {
-  display: flex;
-  border: none;
-  background-color: #5fb523;
-  color: #fff;
-  font-size: 1.2rem;
-  padding: 10px;
-  border-radius: 8px;
 }
