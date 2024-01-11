@@ -13,7 +13,7 @@
  *= require_tree .
  *= require_self
  */
- 
+
 * {
   box-sizing: border-box;
   list-style: none;
@@ -54,7 +54,7 @@ a {
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  background-color: #F5F6F8;
+  background-color: #f5f6f8;
   height: 100vh;
   overflow: hidden;
 }
@@ -100,7 +100,7 @@ a {
 }
 
 .login-container {
-  background-color: #F5F6F8;
+  background-color: #f5f6f8;
   height: 100vh;
 }
 
@@ -143,7 +143,7 @@ a {
 }
 
 .register-container {
-  background-color: #F5F6F8;
+  background-color: #f5f6f8;
   height: 100vh;
 }
 
@@ -185,7 +185,6 @@ a {
   flex-direction: column;
   height: 75%;
 }
-
 
 .categories-header {
   display: flex;
@@ -291,7 +290,7 @@ a {
 .payment-link {
   display: flex;
   align-items: center;
- justify-content: center;
+  justify-content: center;
   text-decoration: none;
   color: #fff;
   font-size: 1.2rem;
