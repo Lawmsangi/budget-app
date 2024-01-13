@@ -1,13 +1,12 @@
 class PaymentsController < ApplicationController
-  before_action :set_category
-
   def index
     @payments = @category.payments.order(created_at: :desc)
+    @category = current_user.categories.find(params[:category_id])
   end
 
   def new
     @categories = current_user.categories
-    @category = Category.find_by(id: params[:category_id])
+    @category = current_user.categories.find(params[:category_id])
     @payment = Payment.new
   end
 
@@ -29,11 +28,7 @@ class PaymentsController < ApplicationController
 
   private
 
-  def set_category
-    @category = current_user.categories.find(params[:category_id])
-  end
-
   def payment_params
-    params.require(:payment).permit(:name, :amount).merge(category: params[:payment][:category])
+    params.require(:payment).permit(:name, :amount, :category)
   end
 end

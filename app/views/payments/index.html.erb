@@ -13,7 +13,6 @@
     <span class="font-black"><%= number_to_currency(@category.payments.sum(:amount)) %></span>
   </div>
 
-
   <div class="payments-details">
     <ul class="payments-lists">
     <% @payments.each do |payment| %>
@@ -34,7 +33,7 @@
     </ul>
   </div>
 
-<div class="new-payment">
-    <%= link_to "New Transaction", new_category_payment_path(@category) , class: "payment-link uppercase-text"%>
-</div>
+  <div class="new-payment">
+      <%= link_to "New Transaction", new_category_payment_path(@category) , class: "payment-link uppercase-text"%>
+  </div>
 </div>
